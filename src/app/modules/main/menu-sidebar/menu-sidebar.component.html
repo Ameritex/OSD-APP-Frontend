@@ -1,0 +1,85 @@
+<!-- Brand Logo -->
+<a [routerLink]="['/']" class="brand-link">
+    <img
+        src="assets/img/logo.png"
+        alt="Ameritex Logo"      
+     
+    />
+    <span class="brand-text font-weight-light"></span>
+</a>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <!-- Sidebar user (optional) -->
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            <img
+                src="assets/img/default-profile.png"
+                class="img-circle elevation-2"
+                alt="User Image"
+            />
+        </div>
+        <div class="info">
+            <a href="#" class="d-block">
+                Admin
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2" style="overflow-y: hidden">
+        <ul
+            class="nav nav-pills nav-sidebar flex-column"
+            data-widget="treeview"
+            role="menu"
+            data-accordion="false"
+        >
+            <!-- Add icons to the links using the .nav-icon class
+             with font-awesome or any other icon font library -->
+            <!--
+             <li class="nav-item">
+                <a [routerLink]="['/']" class="nav-link">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            -->
+            <li class="nav-item">
+                <a [routerLink]="['/upload']" class="nav-link">
+                    <i class="nav-icon fa fa-user"></i>
+                    <p>OSD Update</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/audit']" class="nav-link">
+                    <i class="nav-icon fa fa-history"></i>
+                    <p>Audit Log</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/job-traveller']" class="nav-link">
+                    <i class="nav-icon fa fa-file-pdf"></i>
+                    <p>Generate Job Traveller</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/search-job-traveller']" class="nav-link">
+                    <i class="nav-icon fa fa-search"></i>
+                    <p>Search Job Travellers</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/reports']" class="nav-link">
+                    <i class="nav-icon fa fa-bars"></i>
+                    <p>Reports</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a [routerLink]="['/bom']" class="nav-link">
+                    <i class="nav-icon fa fa-fire"></i>
+                    <p>BOM</p>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,116 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Audit Log</h1>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+
+            <div class="card-body">
+                <form [formGroup]="auditForm">
+                    <div class="row" style="margin-bottom:15px;">
+                        <div class="col-md-12">
+                            <label>Job No</label><br />
+                            <input type="text" class="form-control" formControlName="jobNo"
+                                placeholder="Enter job number">
+
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <label>Part No</label><br />
+                            <input type="text" class="form-control" formControlName="partNo"
+                                placeholder="Enter part number">
+                        </div>
+
+                        <div class="col-md-3 mt-2">
+                            <div class="form-group">
+                                <label>From Date</label>
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="yyyy-mm-dd" formControlName="datePicker1"
+                                        ngbDatepicker #d1="ngbDatepicker">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar"
+                                            (click)="d1.toggle(); $event.stopPropagation();" type="button"><i
+                                                class="fa fa-calendar"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-2">
+                            <div class="form-group">
+                                <label>To Date</label>
+                                <div class="input-group">
+                                    <input class="form-control" placeholder="yyyy-mm-dd" formControlName="datePicker2"
+                                        ngbDatepicker #d2="ngbDatepicker">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar"
+                                            (click)="d2.toggle(); $event.stopPropagation();" type="button"><i
+                                                class="fa fa-calendar"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mt-2">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <div class="button-group">
+                                 <button class="btn btn-search btn-primary" (click)="search()">Search</button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class=" float-right">
+                                <button class="btn btn-search btn-danger" (click)="download()">Download</button>
+                             </div>
+                        </div> 
+                        <div class="col-md-12 mt-2">
+                            <table  style="width:100%" datatable [dtOptions]="dtOptions" class="row-border hover">
+                                <thead>
+                                    <tr>                                       
+                                        <th scope="col">Job No</th>
+                                        <th scope="col">Cust Desc</th>
+                                        <th scope="col">PONum</th>                                    
+                                        <th scope="col">Part No</th>                                   
+                                        <th scope="col">Due Date</th>
+                                        <th scope="col">Qty</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Created Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of audits; let i = index">                                     
+                                        <td scope="row">{{item.jobNo}}</td>
+                                        <td scope="row">{{item.custDesc}}</td>
+                                        <td scope="row">{{item.poNum}}</td>                                       
+                                        <td scope="row">{{item.partNo}}</td>                                    
+                                        <td scope="row">{{item.jobDue| date: 'yyyy-MM-dd'}}</td>
+                                        <td scope="row">{{item.qty}}</td>
+                                        <td scope="row">{{item.status}}</td>
+                                        <td scope="row">{{item.createdDate| date: 'yyyy-MM-dd HH:mm'}}</td>
+                                      </tr>      
+                                </tbody>
+                                
+                            </table>
+
+                           
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->

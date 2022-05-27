@@ -1,0 +1,70 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Ameritex OSD Update</h1>
+            </div>           
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            
+            <div class="card-body">
+                <div class="row" style="margin-bottom:15px;">
+               
+                    <div class="col-md-12">
+                        <div class="upload" *ngIf="progress > 0" style="display: none">
+                            {{progress}}%
+                        </div>
+                        <div class="upload" *ngIf="message" style="color:red">
+                            {{message}}
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" >
+                        <label>Enter Job number to Update</label><br/>
+                        <input type="text" (input)="changeText()" style="width:50%" class="form-control" #txtJob placeholder="Enter job number" >                
+                        <br/>
+                        <label>Note</label><br/>
+                        <input type="text"  style="width:50% " class="form-control" maxlength="100"  #txtNote placeholder="Enter note" />            
+                        <br/>
+                        <button type="button" class="btn btn-danger btn-sm"  (click)="updateSingleJob(txtJob.value,txtNote.value)">Update</button>
+                    </div>
+                    <hr/>
+                    <div class="col-md-12 mt-3" >
+                        <label>Upload CSV file with multiple Jobs</label><br/>
+                        <input type="file" #file placeholder="Choose file" accept=".csv">                        
+                        &nbsp; &nbsp;<button type="button" class="btn btn-primary btn-sm"  (click)="uploadFile(file.files)">Upload File</button>
+    
+                    <div class="col-md-12 mt-2" *ngIf="fileName">
+                        <label>CSV Preview</label><br/>
+                        <table class="table display">
+                            <tr>
+                                <td>No.</td>    
+                                <td>Job Number</td>    
+                            </tr>
+                            <tr *ngFor="let d of list; index as i">
+                                <td> {{i+1}}</td>
+                                <td>{{d}}</td>
+                            </tr>
+                        </table>  
+                        <label>Note</label><br/> 
+                        <input type="text"  style="width:50% " class="form-control" maxlength="100"  #txtNoteMultiple placeholder="Enter note" />            
+                        <br/>
+                        <button type="button" class="btn btn-danger btn-sm"  (click)="updateMultipleJobs(txtNoteMultiple.value)">Update</button>
+                    </div>
+                  </div>
+            </div>
+          
+        </div>
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->

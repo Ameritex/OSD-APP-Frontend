@@ -1,0 +1,76 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Search Job Traveller</h1>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+
+            <div class="card-body">
+                <form [formGroup]="searchForm">
+                    <div class="row" style="margin-bottom:15px;">
+                        <div class="col-md-12">
+                            <label>Job No</label><br />
+                            <input type="text" class="form-control" formControlName="jobNo"
+                                placeholder="Enter job number">
+                        </div>
+                          
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <div class="button-group">
+                                 <button class="btn btn-search btn-primary" (click)="search()">Search</button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12 mt-2">
+                            <table  style="width:100%" datatable [dtOptions]="dtOptions" class="row-border hover">
+                                <thead>
+                                    <tr>                                       
+                                        <th scope="col">Job No</th>
+                                        <th scope="col">File Name</th>                                      
+                                        <th scope="col">CreatedDate</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of results; let i = index">                                     
+                                        <td scope="row">{{item.jobNo}}</td>
+                                        <td scope="row">{{item.fileName}}</td>                                                                      
+                                        <td scope="row">{{item.createdDate| date: 'yyyy-MM-dd'}}</td>                                   
+                                        <td scope="row">
+                                           
+                                            <button class="btn btn-sm btn-primary" (click)="preview(item.fileName)">Preview</button>
+                                            &nbsp;
+                                            <button class="btn btn-sm btn-danger"  (click)="download(item.fileName)">Download</button>
+                                        </td>                                   
+                                     
+                                    </tr>      
+                                </tbody>
+                                
+                            </table>
+
+                           
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->
