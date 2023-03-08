@@ -7,8 +7,8 @@ import {HttpClient} from '@angular/common/http';
 export class ApiService {
     constructor(private http: HttpClient) {}
     
-    public static API_ENDPOINT='http://192.168.16.160/m-files';
-    //public static API_ENDPOINT='http://localhost:55517';
+    // public static API_ENDPOINT='http://192.168.16.31/m-files';
+    public static API_ENDPOINT='http://localhost:55517';
   
     public downloadJT(fileUrl: string) {       
         return this.http.get(ApiService.API_ENDPOINT+`/api/Admin/DownloadJT?fileName=${fileUrl}`, {

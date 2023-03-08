@@ -1,0 +1,91 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Ameritex Missing OSDs Reset</h1>
+            </div>           
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="osdForm">
+                <div class="row" style="margin-bottom:15px;">
+               
+                    <div class="col-md-12">
+                        
+                        <div class="upload" *ngIf="message" [style.color]="color">
+                            {{message}}
+                        </div>
+                    </div>
+                    <div class="col-md-12" >
+                        <label>Due Date From</label><br/>
+                        <div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd" formControlName="datePicker1" (click)="d1.toggle(); $event.stopPropagation();"
+                                ngbDatepicker #d1="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary calendar"
+                                    (click)="d1.toggle(); $event.stopPropagation();" type="button"><i
+                                        class="fa fa-calendar"></i></button>
+                            </div>
+                        </div>                
+                        <br/>
+                        <label>Due Date To</label><br/>
+                        <div class="input-group">
+                            <input class="form-control" placeholder="yyyy-mm-dd" formControlName="datePicker2" (click)="d2.toggle(); $event.stopPropagation();"
+                                ngbDatepicker #d2="ngbDatepicker">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary calendar"
+                                    (click)="d2.toggle(); $event.stopPropagation();" type="button"><i
+                                        class="fa fa-calendar"></i></button>
+                            </div>
+                        </div>           
+                        <br/>
+                        <button type="button" class="btn btn-danger btn-sm"  (click)="resetMissingOSDs()" [disabled]="isLoading">Find Missing OSDs</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- /.card -->
+    <div class="container-fluid" *ngIf="missingOSDs.length > 0">
+        <div class="card">
+            <div class="card-header">
+                Missing OSDs Found ({{missingOSDs.length}})
+            </div>
+            <div class="card-body">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-success btn-sm pull-right"  (click)="processMissingOSDs()" [disabled]="isProcessing">Process OSDs</button>
+                </div>
+                <div class="row" style="margin-top:15px;">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Job Number</th>    
+                                <th>File Name</th>  
+                                <th>Status</th>  
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let m of missingOSDs; index as i">
+                                <td>{{m.jobNo}}</td>
+                                <td>{{m.fileName}}</td>
+                                <td [style.color]="m.statusColor">{{m.status}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /.content -->

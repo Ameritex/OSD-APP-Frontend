@@ -29,7 +29,8 @@ export class BOMComponent implements OnInit {
    
   }
 
-  public run = () => {    
+  
+  public runBOM = () => {    
     var body = {
    
     }  
@@ -37,12 +38,46 @@ export class BOMComponent implements OnInit {
     this.http.post(q,body)
     .subscribe((data:any) => {    
         if(data.success){
-          alert("File " + data.file +" is generated successfully")     
+          alert("File " + data.file +" has been generated successfully")     
         }else{
           alert("Some errors occur. Please try again")     
         }
  
     });
   }
+ 
+   public runProductStatements = () => {    
+    var body = {
+   
+    }  
+    var q = this.URL + '/api/Admin/ProductStatements'
+    this.http.post(q,body)
+    .subscribe((data:any) => {    
+        if(data.success){
+          alert("File " + data.file +" has been generated successfully")     
+        }else{
+          alert("Some errors occur. Please try again")     
+        }
+ 
+    });
+  }
+  
+  
+  public runSchedulerStatements = () => {    
+    var body = {
+   
+    }  
+    var q = this.URL + '/api/Admin/SchedulerStatements'
+    this.http.post(q,body)
+    .subscribe((data:any) => {    
+        if(data.success){
+          alert("File " + data.file +" has been generated successfully")     
+        }else{
+          alert("Some errors occur. Please try again")     
+        }
+ 
+    });
+  }
+  
 
 }

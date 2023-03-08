@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>BOM</h1>
+                <h1>Routing</h1>
             </div>
         </div>
     </div>
@@ -17,7 +17,9 @@
         <div class="card">
 
             <div class="card-body">
-                <button class="btn btn-search btn-primary" (click)="run()">Run Query</button>
+				<div class="col-sm-12"><button class="btn btn-search btn-primary" style="width:200px" (click)="runSchedulerStatements()">Routing</button></div>
+				<div class="col-sm-12 mt-2"><button style="width:200px" class="btn btn-search btn-primary" (click)="runBOM()">Bom</button></div>
+				<div class="col-sm-12 mt-2"><button style="width:200px" class="btn btn-search btn-primary" (click)="runProductStatements()">Statement Product</button></div>			
             </div>
 
         </div>

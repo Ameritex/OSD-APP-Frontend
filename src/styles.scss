@@ -16,5 +16,10 @@ body {
     height: 100vh;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

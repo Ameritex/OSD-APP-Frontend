@@ -18,6 +18,7 @@ import {NonAuthGuard} from '@guards/non-auth.guard';
 import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.component';
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import {PrivacyPolicyComponent} from '@modules/privacy-policy/privacy-policy.component';
+import { MissingOsdComponent } from '@pages/missing-osd/missing-osd.component';
 
 const routes: Routes = [
     {
@@ -57,6 +58,10 @@ const routes: Routes = [
             {
                 path: 'audit',
                 component: AuditComponent,
+            },
+            {
+                path: 'missing-osd',
+                component: MissingOsdComponent
             },
             {
                 path: '',

@@ -36,6 +36,7 @@ import {LanguageDropdownComponent} from '@modules/main/header/language-dropdown/
 import {PrivacyPolicyComponent} from './modules/privacy-policy/privacy-policy.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DataTablesModule } from 'angular-datatables';
+import { MissingOsdComponent } from './pages/missing-osd/missing-osd.component';
 registerLocaleData(localeEn, 'en-EN');
 
 @NgModule({
@@ -63,7 +64,8 @@ registerLocaleData(localeEn, 'en-EN');
         ForgotPasswordComponent,
         RecoverPasswordComponent,
         LanguageDropdownComponent,
-        PrivacyPolicyComponent
+        PrivacyPolicyComponent,
+        MissingOsdComponent
     ],
     imports: [
         BrowserModule,
