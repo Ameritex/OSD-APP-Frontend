@@ -11,6 +11,7 @@ import {FooterComponent} from '@modules/main/footer/footer.component';
 import {MenuSidebarComponent} from '@modules/main/menu-sidebar/menu-sidebar.component';
 import {UploadComponent} from '@pages/upload/upload.component';
 import {AuditComponent} from '@pages/audit/audit.component';
+import {UserActivityComponent} from '@pages/user-activity/user-activity.component';
 import {JobTravellerComponent} from '@pages/job-traveller/job-traveller.component';
 import {OrderAnalysisReportComponent} from '@pages/order-analysis-report/order-analysis-report.component';
 import {ReportsComponent} from '@pages/reports/reports.component';
@@ -49,6 +50,7 @@ registerLocaleData(localeEn, 'en-EN');
         MenuSidebarComponent,
         UploadComponent,
         AuditComponent,
+        UserActivityComponent,
         JobTravellerComponent,
         SearchJobTravellerComponent,
         OrderAnalysisReportComponent,

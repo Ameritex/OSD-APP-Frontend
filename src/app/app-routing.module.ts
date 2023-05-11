@@ -9,6 +9,7 @@ import {ReportsComponent} from '@pages/reports/reports.component';
 import {BOMComponent} from '@pages/bom/bom.component';
 
 import {AuditComponent} from '@pages/audit/audit.component';
+import {UserActivityComponent} from '@pages/user-activity/user-activity.component';
 import {LoginComponent} from '@modules/login/login.component';
 import {ProfileComponent} from '@pages/profile/profile.component';
 import {RegisterComponent} from '@modules/register/register.component';
@@ -58,6 +59,10 @@ const routes: Routes = [
             {
                 path: 'audit',
                 component: AuditComponent,
+            },
+            {
+                path: 'user-activity',
+                component: UserActivityComponent,
             },
             {
                 path: 'missing-osd',

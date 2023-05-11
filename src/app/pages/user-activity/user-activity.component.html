@@ -1,0 +1,60 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>User Activity</h1>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+
+            <div class="card-body">
+                <form >
+                    <div class="row" style="margin-bottom:15px;">
+                        
+                        <div class="col-md-12">
+                            <div class=" float-right">
+                                <button class="btn btn-search btn-danger" (click)="search()" >Refresh</button>
+                             </div>
+                        </div> 
+                        <div class="col-md-12 mt-2">
+                            <table  style="width:100%" datatable [dtOptions]="dtOptions" class="row-border hover">
+                                <thead>
+                                    <tr>                                       
+                                        <th scope="col">Employee</th>
+                                        <th scope="col">Job Number</th>
+                                        <th scope="col">Customer</th>                                 
+                                        <th scope="col">Part Number</th>  
+                                        <th scope="col">Work Center</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of audits; let i = index">                                     
+                                        <td scope="row">{{item.emplName}}</td>
+                                        <td scope="row">{{item.jobNo}}</td>
+                                        <td scope="row">{{item.custCode}}</td>                                     
+                                        <td scope="row">{{item.partNo}}</td> 
+                                        <td scope="row">{{item.workCenter}}</td>
+                                      </tr>      
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->
