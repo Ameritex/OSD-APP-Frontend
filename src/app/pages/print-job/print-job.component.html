@@ -1,0 +1,41 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>Ameritex Label Update</h1>
+            </div>           
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="container-fluid">
+        <div class="card">
+            
+            <div class="card-body">
+                <div class="row" style="margin-bottom:15px;">
+               
+                    <div class="col-md-12">
+                        <div class="{{messageClass}}">
+                            {{message}}
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" >
+                        <label>Enter Job number to Label</label><br/>
+                        <input type="text" (input)="changeText()" style="width:50%" class="form-control" #txtJob placeholder="Enter job number" >                
+                        <br/>
+                        <button type="button" class="btn btn-danger btn-sm"  (click)="printJobRoute(txtJob.value)">Print Job</button>
+                    </div>
+                    
+            </div>
+          
+        </div>
+    </div>
+    <!-- /.card -->
+</section>
+<!-- /.content -->

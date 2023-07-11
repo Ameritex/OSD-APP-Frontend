@@ -20,6 +20,7 @@ import {ForgotPasswordComponent} from '@modules/forgot-password/forgot-password.
 import {RecoverPasswordComponent} from '@modules/recover-password/recover-password.component';
 import {PrivacyPolicyComponent} from '@modules/privacy-policy/privacy-policy.component';
 import { MissingOsdComponent } from '@pages/missing-osd/missing-osd.component';
+import { PrintJobComponent } from '@pages/print-job/print-job.component';
 
 const routes: Routes = [
     {
@@ -67,6 +68,10 @@ const routes: Routes = [
             {
                 path: 'missing-osd',
                 component: MissingOsdComponent
+            },
+            {
+                path: 'print-job',
+                component: PrintJobComponent
             },
             {
                 path: '',
